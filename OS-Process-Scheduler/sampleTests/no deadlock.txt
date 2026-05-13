@@ -1,0 +1,3023 @@
+Quantum 5
+
+[1,1], [2,1],[3,10],[4,4]
+0   0   0   CPU{R[1,1],R[4,2], 4, R[2,1], 9} IO{21} CPU{F[4,1], 6,F[2,1] ,13,F[4,1],F[1,1]}
+1   8   4   CPU{R[1,1],R[3,2], 11,F[1,1], R[2,1], 15} IO{7} CPU{F[3,1], 11,F[2,1] ,26,F[3,1]}
+2   5   10   CPU{R[1,1], 50, R[2,1], 22} IO{7} CPU{F[2,1],F[1,1]}
+10   4  10   CPU{R[1,1], 60, R[2,1], 26} IO{14} CPU{F[2,1],F[1,1]}
+11   4  20   CPU{R[3,1], 60, R[3,3], 26} IO{14} CPU{30,F[3,2],F[3,2]}
+
+"C:\Program Files\Java\jdk-17\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2025.3.1.1\lib\idea_rt.jar=49515" -Dfile.encoding=UTF-8 -classpath C:\Users\wadee\IdeaProjects\OSFINAL\out\production\OSFINAL Main
+Parsing resources: [1,1], [2,1],[3,10],[4,4]
+  Resource R1: 1 instances
+  Resource R2: 1 instances
+  Resource R3: 10 instances
+  Resource R4: 4 instances
+Parsing process line: 0   0   0   CPU{R[1,1],R[4,2], 4, R[2,1], 9} IO{21} CPU{F[4,1], 6,F[2,1] ,13,F[4,1],F[1,1]}
+  Created: P0(pri=0, actions=[R[1,1], R[4,2], 4{CPU}, R[2,1], 9{CPU}, 21{IO}, F[4,1], 6{CPU}, F[2,1], 13{CPU}, F[4,1], F[1,1]])
+Parsing process line: 1   8   4   CPU{R[1,1],R[3,2], 11,F[1,1], R[2,1], 15} IO{7} CPU{F[3,1], 11,F[2,1] ,26,F[3,1]}
+  Created: P1(pri=4, actions=[R[1,1], R[3,2], 11{CPU}, F[1,1], R[2,1], 15{CPU}, 7{IO}, F[3,1], 11{CPU}, F[2,1], 26{CPU}, F[3,1]])
+Parsing process line: 2   5   10   CPU{R[1,1], 50, R[2,1], 22} IO{7} CPU{F[2,1],F[1,1]}
+  Created: P2(pri=10, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]])
+Parsing process line: 10   4  10   CPU{R[1,1], 60, R[2,1], 26} IO{14} CPU{F[2,1],F[1,1]}
+  Created: P10(pri=10, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]])
+Parsing process line: 11   4  20   CPU{R[3,1], 60, R[3,3], 26} IO{14} CPU{30,F[3,2],F[3,2]}
+  Created: P11(pri=20, actions=[R[3,1], 60{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])
+=== Initial State ===
+Resources: {1=1, 2=1, 3=10, 4=4}
+Processes: 5
+  P0(pri=0, actions=[R[1,1], R[4,2], 4{CPU}, R[2,1], 9{CPU}, 21{IO}, F[4,1], 6{CPU}, F[2,1], 13{CPU}, F[4,1], F[1,1]])
+  P1(pri=4, actions=[R[1,1], R[3,2], 11{CPU}, F[1,1], R[2,1], 15{CPU}, 7{IO}, F[3,1], 11{CPU}, F[2,1], 26{CPU}, F[3,1]])
+  P2(pri=10, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]])
+  P10(pri=10, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]])
+  P11(pri=20, actions=[R[3,1], 60{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])
+
+
+--- Time 0 ---
+Process P0 arrived
+Scheduled P0
+P0 acquired 1 of R1
+P0 acquired 2 of R4
+P0 executing CPU, remaining: 3, quantum: 1
+Ready: []
+Waiting: []
+IO: []
+Running: P0
+
+--- Time 1 ---
+P0 executing CPU, remaining: 2, quantum: 2
+Ready: []
+Waiting: []
+IO: []
+Running: P0
+
+--- Time 2 ---
+P0 executing CPU, remaining: 1, quantum: 3
+Ready: []
+Waiting: []
+IO: []
+Running: P0
+
+--- Time 3 ---
+P0 executing CPU, remaining: 0, quantum: 4
+Ready: []
+Waiting: []
+IO: []
+Running: P0
+
+--- Time 4 ---
+Process P10 arrived
+Process P11 arrived
+P0 acquired 1 of R2
+P0 executing CPU, remaining: 8, quantum: 5
+Ready: [P10, P11]
+Waiting: []
+IO: []
+Running: P0
+
+--- Time 5 ---
+Process P2 arrived
+Quantum expired for P0
+[P10(pri=10, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P2(pri=10, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]]), P11(pri=20, actions=[R[3,1], 60{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=10, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P2(pri=10, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]]), P11(pri=20, actions=[R[3,1], 60{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P0 executing CPU, remaining: 7, quantum: 1
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P0
+
+--- Time 6 ---
+P0 executing CPU, remaining: 6, quantum: 2
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P0
+
+--- Time 7 ---
+P0 executing CPU, remaining: 5, quantum: 3
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P0
+
+--- Time 8 ---
+Process P1 arrived
+P0 executing CPU, remaining: 4, quantum: 4
+Ready: [P1, P10, P2, P11]
+Waiting: []
+IO: []
+Running: P0
+
+--- Time 9 ---
+P0 executing CPU, remaining: 3, quantum: 5
+Ready: [P1, P10, P2, P11]
+Waiting: []
+IO: []
+Running: P0
+
+--- Time 10 ---
+Quantum expired for P0
+[P1(pri=4, actions=[R[1,1], R[3,2], 11{CPU}, F[1,1], R[2,1], 15{CPU}, 7{IO}, F[3,1], 11{CPU}, F[2,1], 26{CPU}, F[3,1]]), P10(pri=10, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P2(pri=10, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]]), P11(pri=20, actions=[R[3,1], 60{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P1(pri=4, actions=[R[1,1], R[3,2], 11{CPU}, F[1,1], R[2,1], 15{CPU}, 7{IO}, F[3,1], 11{CPU}, F[2,1], 26{CPU}, F[3,1]]), P10(pri=10, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P2(pri=10, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]]), P11(pri=20, actions=[R[3,1], 60{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P0 executing CPU, remaining: 2, quantum: 1
+Ready: [P1, P10, P2, P11]
+Waiting: []
+IO: []
+Running: P0
+
+--- Time 11 ---
+P0 executing CPU, remaining: 1, quantum: 2
+Ready: [P1, P10, P2, P11]
+Waiting: []
+IO: []
+Running: P0
+
+--- Time 12 ---
+P0 executing CPU, remaining: 0, quantum: 3
+Ready: [P1, P10, P2, P11]
+Waiting: []
+IO: []
+Running: none
+
+--- Time 13 ---
+P0 moved to IO queue
+Scheduled P1
+P1 waiting for 1 of R1 (available: 0)
+P1 blocked on resource
+
+--- Time 13 ---
+  Released 1 of R1
+  Released 1 of R2
+  Released 2 of R4
+Scheduled P10
+P10 waiting for 1 of R1 (available: 0)
+P10 blocked on resource
+
+--- Time 13 ---
+  Released 1 of R1
+  Released 1 of R2
+  Released 2 of R4
+Scheduled P2
+P2 waiting for 1 of R1 (available: 0)
+P2 blocked on resource
+
+--- Time 13 ---
+  Released 1 of R1
+  Released 1 of R2
+  Released 2 of R4
+Scheduled P11
+P11 acquired 1 of R3
+P11 executing CPU, remaining: 59, quantum: 1
+P0 IO remaining: 20
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 14 ---
+P11 executing CPU, remaining: 58, quantum: 2
+P0 IO remaining: 19
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 15 ---
+P11 executing CPU, remaining: 57, quantum: 3
+P0 IO remaining: 18
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 16 ---
+P11 executing CPU, remaining: 56, quantum: 4
+P0 IO remaining: 17
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 17 ---
+P11 executing CPU, remaining: 55, quantum: 5
+P0 IO remaining: 16
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 18 ---
+P11 executing CPU, remaining: 54, quantum: 1
+P0 IO remaining: 15
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 19 ---
+P11 executing CPU, remaining: 53, quantum: 2
+P0 IO remaining: 14
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 20 ---
+P11 executing CPU, remaining: 52, quantum: 3
+P0 IO remaining: 13
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 21 ---
+P11 executing CPU, remaining: 51, quantum: 4
+P0 IO remaining: 12
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 22 ---
+P11 executing CPU, remaining: 50, quantum: 5
+P0 IO remaining: 11
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 23 ---
+P11 executing CPU, remaining: 49, quantum: 1
+P0 IO remaining: 10
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 24 ---
+P11 executing CPU, remaining: 48, quantum: 2
+P0 IO remaining: 9
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 25 ---
+P11 executing CPU, remaining: 47, quantum: 3
+P0 IO remaining: 8
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 26 ---
+P11 executing CPU, remaining: 46, quantum: 4
+P0 IO remaining: 7
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 27 ---
+P11 executing CPU, remaining: 45, quantum: 5
+P0 IO remaining: 6
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 28 ---
+P11 executing CPU, remaining: 44, quantum: 1
+P0 IO remaining: 5
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 29 ---
+P11 executing CPU, remaining: 43, quantum: 2
+P0 IO remaining: 4
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 30 ---
+P11 executing CPU, remaining: 42, quantum: 3
+P0 IO remaining: 3
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 31 ---
+P11 executing CPU, remaining: 41, quantum: 4
+P0 IO remaining: 2
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 32 ---
+P11 executing CPU, remaining: 40, quantum: 5
+P0 IO remaining: 1
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 33 ---
+P11 executing CPU, remaining: 39, quantum: 1
+P0 IO remaining: 0
+Ready: []
+Waiting: [P1, P10, P2]
+IO: [P0]
+Running: P11
+
+--- Time 34 ---
+P0 completed IO, moved to ready queue
+Preempting P11 for higher priority P0
+P0 released 1 of R4
+P0 executing CPU, remaining: 5, quantum: 1
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 35 ---
+P0 executing CPU, remaining: 4, quantum: 2
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 36 ---
+P0 executing CPU, remaining: 3, quantum: 3
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 37 ---
+P0 executing CPU, remaining: 2, quantum: 4
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 38 ---
+P0 executing CPU, remaining: 1, quantum: 5
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 39 ---
+Quantum expired for P0
+[P11(pri=20, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=20, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P0 executing CPU, remaining: 0, quantum: 1
+P0 released 1 of R2
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 40 ---
+P0 executing CPU, remaining: 12, quantum: 2
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 41 ---
+P0 executing CPU, remaining: 11, quantum: 3
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 42 ---
+P0 executing CPU, remaining: 10, quantum: 4
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 43 ---
+P0 executing CPU, remaining: 9, quantum: 5
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 44 ---
+P11 aged, new priority: 19
+Quantum expired for P0
+[P11(pri=19, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=19, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P0 executing CPU, remaining: 8, quantum: 1
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 45 ---
+P0 executing CPU, remaining: 7, quantum: 2
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 46 ---
+P0 executing CPU, remaining: 6, quantum: 3
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 47 ---
+P0 executing CPU, remaining: 5, quantum: 4
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 48 ---
+P0 executing CPU, remaining: 4, quantum: 5
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 49 ---
+Quantum expired for P0
+[P11(pri=19, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=19, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P0 executing CPU, remaining: 3, quantum: 1
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 50 ---
+P0 executing CPU, remaining: 2, quantum: 2
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 51 ---
+P0 executing CPU, remaining: 1, quantum: 3
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: P0
+
+--- Time 52 ---
+P0 executing CPU, remaining: 0, quantum: 4
+P0 released 1 of R4
+P0 released 1 of R1
+  Released 0 of R1
+  Released 0 of R2
+  Released 0 of R4
+P0 terminated
+Ready: [P11]
+Waiting: [P1, P10, P2]
+IO: []
+Running: none
+
+--- Time 53 ---
+P1 woke up - resource available
+P10 woke up - resource available
+P2 woke up - resource available
+Scheduled P1
+P1 acquired 1 of R1
+P1 acquired 2 of R3
+P1 executing CPU, remaining: 10, quantum: 1
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 54 ---
+P11 aged, new priority: 18
+P1 executing CPU, remaining: 9, quantum: 2
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 55 ---
+P1 executing CPU, remaining: 8, quantum: 3
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 56 ---
+P1 executing CPU, remaining: 7, quantum: 4
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 57 ---
+P1 executing CPU, remaining: 6, quantum: 5
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 58 ---
+Quantum expired for P1
+[P10(pri=10, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P2(pri=10, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]]), P11(pri=18, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=10, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P2(pri=10, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]]), P11(pri=18, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P1 executing CPU, remaining: 5, quantum: 1
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 59 ---
+P1 executing CPU, remaining: 4, quantum: 2
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 60 ---
+P1 executing CPU, remaining: 3, quantum: 3
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 61 ---
+P1 executing CPU, remaining: 2, quantum: 4
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 62 ---
+P1 executing CPU, remaining: 1, quantum: 5
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 63 ---
+P10 aged, new priority: 9
+P2 aged, new priority: 9
+Quantum expired for P1
+[P10(pri=9, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P2(pri=9, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]]), P11(pri=18, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=9, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P2(pri=9, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]]), P11(pri=18, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P1 executing CPU, remaining: 0, quantum: 1
+P1 released 1 of R1
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 64 ---
+P11 aged, new priority: 17
+P1 acquired 1 of R2
+P1 executing CPU, remaining: 14, quantum: 2
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 65 ---
+P1 executing CPU, remaining: 13, quantum: 3
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 66 ---
+P1 executing CPU, remaining: 12, quantum: 4
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 67 ---
+P1 executing CPU, remaining: 11, quantum: 5
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 68 ---
+Quantum expired for P1
+[P10(pri=9, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P2(pri=9, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]]), P11(pri=17, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=9, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P2(pri=9, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]]), P11(pri=17, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P1 executing CPU, remaining: 10, quantum: 1
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 69 ---
+P1 executing CPU, remaining: 9, quantum: 2
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 70 ---
+P1 executing CPU, remaining: 8, quantum: 3
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 71 ---
+P1 executing CPU, remaining: 7, quantum: 4
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 72 ---
+P1 executing CPU, remaining: 6, quantum: 5
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 73 ---
+P10 aged, new priority: 8
+P2 aged, new priority: 8
+Quantum expired for P1
+[P10(pri=8, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P2(pri=8, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]]), P11(pri=17, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=8, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P2(pri=8, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]]), P11(pri=17, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P1 executing CPU, remaining: 5, quantum: 1
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 74 ---
+P11 aged, new priority: 16
+P1 executing CPU, remaining: 4, quantum: 2
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 75 ---
+P1 executing CPU, remaining: 3, quantum: 3
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 76 ---
+P1 executing CPU, remaining: 2, quantum: 4
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 77 ---
+P1 executing CPU, remaining: 1, quantum: 5
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: P1
+
+--- Time 78 ---
+Quantum expired for P1
+[P10(pri=8, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P2(pri=8, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]]), P11(pri=16, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=8, actions=[R[1,1], 60{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P2(pri=8, actions=[R[1,1], 50{CPU}, R[2,1], 22{CPU}, 7{IO}, F[2,1], F[1,1]]), P11(pri=16, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P1 executing CPU, remaining: 0, quantum: 1
+Ready: [P10, P2, P11]
+Waiting: []
+IO: []
+Running: none
+
+--- Time 79 ---
+P1 moved to IO queue
+Scheduled P10
+P10 acquired 1 of R1
+P10 executing CPU, remaining: 59, quantum: 1
+P1 IO remaining: 6
+Ready: [P2, P11]
+Waiting: []
+IO: [P1]
+Running: P10
+
+--- Time 80 ---
+P10 executing CPU, remaining: 58, quantum: 2
+P1 IO remaining: 5
+Ready: [P2, P11]
+Waiting: []
+IO: [P1]
+Running: P10
+
+--- Time 81 ---
+P10 executing CPU, remaining: 57, quantum: 3
+P1 IO remaining: 4
+Ready: [P2, P11]
+Waiting: []
+IO: [P1]
+Running: P10
+
+--- Time 82 ---
+P10 executing CPU, remaining: 56, quantum: 4
+P1 IO remaining: 3
+Ready: [P2, P11]
+Waiting: []
+IO: [P1]
+Running: P10
+
+--- Time 83 ---
+P2 aged, new priority: 7
+Preempting P10 for higher priority P2
+P2 waiting for 1 of R1 (available: 0)
+P2 blocked on resource
+
+--- Time 83 ---
+  Released 0 of R1
+  Released 1 of R2
+  Released 2 of R3
+  Released 1 of R1
+  Released 1 of R3
+Scheduled P10
+P10 executing CPU, remaining: 55, quantum: 5
+P1 IO remaining: 2
+Ready: [P11]
+Waiting: [P2]
+IO: [P1]
+Running: P10
+
+--- Time 84 ---
+P11 aged, new priority: 15
+Quantum expired for P10
+[P11(pri=15, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=15, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 54, quantum: 1
+P1 IO remaining: 1
+Ready: [P11]
+Waiting: [P2]
+IO: [P1]
+Running: P10
+
+--- Time 85 ---
+P10 executing CPU, remaining: 53, quantum: 2
+P1 IO remaining: 0
+Ready: [P11]
+Waiting: [P2]
+IO: [P1]
+Running: P10
+
+--- Time 86 ---
+P1 completed IO, moved to ready queue
+Preempting P10 for higher priority P1
+P1 released 1 of R3
+P1 executing CPU, remaining: 10, quantum: 1
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 87 ---
+P1 executing CPU, remaining: 9, quantum: 2
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 88 ---
+P1 executing CPU, remaining: 8, quantum: 3
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 89 ---
+P1 executing CPU, remaining: 7, quantum: 4
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 90 ---
+P1 executing CPU, remaining: 6, quantum: 5
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 91 ---
+Quantum expired for P1
+[P10(pri=8, actions=[53{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P11(pri=15, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=8, actions=[53{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P11(pri=15, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P1 executing CPU, remaining: 5, quantum: 1
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 92 ---
+P1 executing CPU, remaining: 4, quantum: 2
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 93 ---
+P1 executing CPU, remaining: 3, quantum: 3
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 94 ---
+P11 aged, new priority: 14
+P1 executing CPU, remaining: 2, quantum: 4
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 95 ---
+P1 executing CPU, remaining: 1, quantum: 5
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 96 ---
+P10 aged, new priority: 7
+Quantum expired for P1
+[P10(pri=7, actions=[53{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P11(pri=14, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=7, actions=[53{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P11(pri=14, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P1 executing CPU, remaining: 0, quantum: 1
+P1 released 1 of R2
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 97 ---
+P1 executing CPU, remaining: 25, quantum: 2
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 98 ---
+P1 executing CPU, remaining: 24, quantum: 3
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 99 ---
+P1 executing CPU, remaining: 23, quantum: 4
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 100 ---
+P1 executing CPU, remaining: 22, quantum: 5
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 101 ---
+Quantum expired for P1
+[P10(pri=7, actions=[53{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P11(pri=14, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=7, actions=[53{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P11(pri=14, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P1 executing CPU, remaining: 21, quantum: 1
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 102 ---
+P1 executing CPU, remaining: 20, quantum: 2
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 103 ---
+P1 executing CPU, remaining: 19, quantum: 3
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 104 ---
+P11 aged, new priority: 13
+P1 executing CPU, remaining: 18, quantum: 4
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 105 ---
+P1 executing CPU, remaining: 17, quantum: 5
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 106 ---
+P10 aged, new priority: 6
+Quantum expired for P1
+[P10(pri=6, actions=[53{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P11(pri=13, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=6, actions=[53{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P11(pri=13, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P1 executing CPU, remaining: 16, quantum: 1
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 107 ---
+P1 executing CPU, remaining: 15, quantum: 2
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 108 ---
+P1 executing CPU, remaining: 14, quantum: 3
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 109 ---
+P1 executing CPU, remaining: 13, quantum: 4
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 110 ---
+P1 executing CPU, remaining: 12, quantum: 5
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 111 ---
+Quantum expired for P1
+[P10(pri=6, actions=[53{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P11(pri=13, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=6, actions=[53{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P11(pri=13, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P1 executing CPU, remaining: 11, quantum: 1
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 112 ---
+P1 executing CPU, remaining: 10, quantum: 2
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 113 ---
+P1 executing CPU, remaining: 9, quantum: 3
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 114 ---
+P11 aged, new priority: 12
+P1 executing CPU, remaining: 8, quantum: 4
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 115 ---
+P1 executing CPU, remaining: 7, quantum: 5
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 116 ---
+P10 aged, new priority: 5
+Quantum expired for P1
+[P10(pri=5, actions=[53{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P11(pri=12, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=5, actions=[53{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P11(pri=12, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P1 executing CPU, remaining: 6, quantum: 1
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 117 ---
+P1 executing CPU, remaining: 5, quantum: 2
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 118 ---
+P1 executing CPU, remaining: 4, quantum: 3
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 119 ---
+P1 executing CPU, remaining: 3, quantum: 4
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 120 ---
+P1 executing CPU, remaining: 2, quantum: 5
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 121 ---
+Quantum expired for P1
+[P10(pri=5, actions=[53{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P11(pri=12, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=5, actions=[53{CPU}, R[2,1], 26{CPU}, 14{IO}, F[2,1], F[1,1]]), P11(pri=12, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P1 executing CPU, remaining: 1, quantum: 1
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: P1
+
+--- Time 122 ---
+P1 executing CPU, remaining: 0, quantum: 2
+P1 released 1 of R3
+  Released 0 of R1
+  Released 0 of R2
+  Released 0 of R3
+P1 terminated
+Ready: [P10, P11]
+Waiting: [P2]
+IO: []
+Running: none
+
+--- Time 123 ---
+Scheduled P10
+P10 executing CPU, remaining: 52, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 124 ---
+P11 aged, new priority: 11
+P10 executing CPU, remaining: 51, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 125 ---
+P10 executing CPU, remaining: 50, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 126 ---
+Quantum expired for P10
+[P11(pri=11, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=11, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 49, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 127 ---
+P10 executing CPU, remaining: 48, quantum: 2
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 128 ---
+P10 executing CPU, remaining: 47, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 129 ---
+P10 executing CPU, remaining: 46, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 130 ---
+P10 executing CPU, remaining: 45, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 131 ---
+Quantum expired for P10
+[P11(pri=11, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=11, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 44, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 132 ---
+P10 executing CPU, remaining: 43, quantum: 2
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 133 ---
+P10 executing CPU, remaining: 42, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 134 ---
+P11 aged, new priority: 10
+P10 executing CPU, remaining: 41, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 135 ---
+P10 executing CPU, remaining: 40, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 136 ---
+Quantum expired for P10
+[P11(pri=10, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=10, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 39, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 137 ---
+P10 executing CPU, remaining: 38, quantum: 2
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 138 ---
+P10 executing CPU, remaining: 37, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 139 ---
+P10 executing CPU, remaining: 36, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 140 ---
+P10 executing CPU, remaining: 35, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 141 ---
+Quantum expired for P10
+[P11(pri=10, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=10, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 34, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 142 ---
+P10 executing CPU, remaining: 33, quantum: 2
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 143 ---
+P10 executing CPU, remaining: 32, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 144 ---
+P11 aged, new priority: 9
+P10 executing CPU, remaining: 31, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 145 ---
+P10 executing CPU, remaining: 30, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 146 ---
+Quantum expired for P10
+[P11(pri=9, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=9, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 29, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 147 ---
+P10 executing CPU, remaining: 28, quantum: 2
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 148 ---
+P10 executing CPU, remaining: 27, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 149 ---
+P10 executing CPU, remaining: 26, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 150 ---
+P10 executing CPU, remaining: 25, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 151 ---
+Quantum expired for P10
+[P11(pri=9, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=9, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 24, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 152 ---
+P10 executing CPU, remaining: 23, quantum: 2
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 153 ---
+P10 executing CPU, remaining: 22, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 154 ---
+P11 aged, new priority: 8
+P10 executing CPU, remaining: 21, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 155 ---
+P10 executing CPU, remaining: 20, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 156 ---
+Quantum expired for P10
+[P11(pri=8, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=8, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 19, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 157 ---
+P10 executing CPU, remaining: 18, quantum: 2
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 158 ---
+P10 executing CPU, remaining: 17, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 159 ---
+P10 executing CPU, remaining: 16, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 160 ---
+P10 executing CPU, remaining: 15, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 161 ---
+Quantum expired for P10
+[P11(pri=8, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=8, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 14, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 162 ---
+P10 executing CPU, remaining: 13, quantum: 2
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 163 ---
+P10 executing CPU, remaining: 12, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 164 ---
+P11 aged, new priority: 7
+P10 executing CPU, remaining: 11, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 165 ---
+P10 executing CPU, remaining: 10, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 166 ---
+Quantum expired for P10
+[P11(pri=7, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=7, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 9, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 167 ---
+P10 executing CPU, remaining: 8, quantum: 2
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 168 ---
+P10 executing CPU, remaining: 7, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 169 ---
+P10 executing CPU, remaining: 6, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 170 ---
+P10 executing CPU, remaining: 5, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 171 ---
+Quantum expired for P10
+[P11(pri=7, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=7, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 4, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 172 ---
+P10 executing CPU, remaining: 3, quantum: 2
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 173 ---
+P10 executing CPU, remaining: 2, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 174 ---
+P11 aged, new priority: 6
+P10 executing CPU, remaining: 1, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 175 ---
+P10 executing CPU, remaining: 0, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 176 ---
+Quantum expired for P10
+[P11(pri=6, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=6, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 acquired 1 of R2
+P10 executing CPU, remaining: 25, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 177 ---
+P10 executing CPU, remaining: 24, quantum: 2
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 178 ---
+P10 executing CPU, remaining: 23, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 179 ---
+P10 executing CPU, remaining: 22, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 180 ---
+P10 executing CPU, remaining: 21, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 181 ---
+Quantum expired for P10
+[P11(pri=6, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=6, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 20, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 182 ---
+P10 executing CPU, remaining: 19, quantum: 2
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 183 ---
+P10 executing CPU, remaining: 18, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 184 ---
+P11 aged, new priority: 5
+P10 executing CPU, remaining: 17, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 185 ---
+P10 executing CPU, remaining: 16, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 186 ---
+Quantum expired for P10
+[P11(pri=5, actions=[39{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=5, actions=[16{CPU}, 14{IO}, F[2,1], F[1,1]])]
+P11 executing CPU, remaining: 38, quantum: 2
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 187 ---
+P11 executing CPU, remaining: 37, quantum: 3
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 188 ---
+P11 executing CPU, remaining: 36, quantum: 4
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 189 ---
+P11 executing CPU, remaining: 35, quantum: 5
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 190 ---
+Quantum expired for P11
+[P10(pri=5, actions=[16{CPU}, 14{IO}, F[2,1], F[1,1]])]
+[P11(pri=5, actions=[35{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 15, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 191 ---
+P10 executing CPU, remaining: 14, quantum: 2
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 192 ---
+P10 executing CPU, remaining: 13, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 193 ---
+P10 executing CPU, remaining: 12, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 194 ---
+P10 executing CPU, remaining: 11, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 195 ---
+Quantum expired for P10
+[P11(pri=5, actions=[35{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=5, actions=[11{CPU}, 14{IO}, F[2,1], F[1,1]])]
+P11 executing CPU, remaining: 34, quantum: 1
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 196 ---
+P11 executing CPU, remaining: 33, quantum: 2
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 197 ---
+P11 executing CPU, remaining: 32, quantum: 3
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 198 ---
+P11 executing CPU, remaining: 31, quantum: 4
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 199 ---
+P11 executing CPU, remaining: 30, quantum: 5
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 200 ---
+Quantum expired for P11
+[P10(pri=5, actions=[11{CPU}, 14{IO}, F[2,1], F[1,1]])]
+[P11(pri=5, actions=[30{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 10, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 201 ---
+P10 executing CPU, remaining: 9, quantum: 2
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 202 ---
+P10 executing CPU, remaining: 8, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 203 ---
+P10 executing CPU, remaining: 7, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 204 ---
+P10 executing CPU, remaining: 6, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 205 ---
+Quantum expired for P10
+[P11(pri=5, actions=[30{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=5, actions=[6{CPU}, 14{IO}, F[2,1], F[1,1]])]
+P11 executing CPU, remaining: 29, quantum: 1
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 206 ---
+P11 executing CPU, remaining: 28, quantum: 2
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 207 ---
+P11 executing CPU, remaining: 27, quantum: 3
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 208 ---
+P11 executing CPU, remaining: 26, quantum: 4
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 209 ---
+P11 executing CPU, remaining: 25, quantum: 5
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 210 ---
+Quantum expired for P11
+[P10(pri=5, actions=[6{CPU}, 14{IO}, F[2,1], F[1,1]])]
+[P11(pri=5, actions=[25{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 5, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 211 ---
+P10 executing CPU, remaining: 4, quantum: 2
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 212 ---
+P10 executing CPU, remaining: 3, quantum: 3
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 213 ---
+P10 executing CPU, remaining: 2, quantum: 4
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 214 ---
+P10 executing CPU, remaining: 1, quantum: 5
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: P10
+
+--- Time 215 ---
+Quantum expired for P10
+[P11(pri=5, actions=[25{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+[P10(pri=5, actions=[1{CPU}, 14{IO}, F[2,1], F[1,1]])]
+P11 executing CPU, remaining: 24, quantum: 1
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 216 ---
+P11 executing CPU, remaining: 23, quantum: 2
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 217 ---
+P11 executing CPU, remaining: 22, quantum: 3
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 218 ---
+P11 executing CPU, remaining: 21, quantum: 4
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 219 ---
+P11 executing CPU, remaining: 20, quantum: 5
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 220 ---
+Quantum expired for P11
+[P10(pri=5, actions=[1{CPU}, 14{IO}, F[2,1], F[1,1]])]
+[P11(pri=5, actions=[20{CPU}, R[3,3], 26{CPU}, 14{IO}, 30{CPU}, F[3,2], F[3,2]])]
+P10 executing CPU, remaining: 0, quantum: 1
+Ready: [P11]
+Waiting: [P2]
+IO: []
+Running: none
+
+--- Time 221 ---
+P10 moved to IO queue
+Scheduled P11
+P11 executing CPU, remaining: 19, quantum: 1
+P10 IO remaining: 13
+Ready: []
+Waiting: [P2]
+IO: [P10]
+Running: P11
+
+--- Time 222 ---
+P11 executing CPU, remaining: 18, quantum: 2
+P10 IO remaining: 12
+Ready: []
+Waiting: [P2]
+IO: [P10]
+Running: P11
+
+--- Time 223 ---
+P11 executing CPU, remaining: 17, quantum: 3
+P10 IO remaining: 11
+Ready: []
+Waiting: [P2]
+IO: [P10]
+Running: P11
+
+--- Time 224 ---
+P11 executing CPU, remaining: 16, quantum: 4
+P10 IO remaining: 10
+Ready: []
+Waiting: [P2]
+IO: [P10]
+Running: P11
+
+--- Time 225 ---
+P11 executing CPU, remaining: 15, quantum: 5
+P10 IO remaining: 9
+Ready: []
+Waiting: [P2]
+IO: [P10]
+Running: P11
+
+--- Time 226 ---
+P11 executing CPU, remaining: 14, quantum: 1
+P10 IO remaining: 8
+Ready: []
+Waiting: [P2]
+IO: [P10]
+Running: P11
+
+--- Time 227 ---
+P11 executing CPU, remaining: 13, quantum: 2
+P10 IO remaining: 7
+Ready: []
+Waiting: [P2]
+IO: [P10]
+Running: P11
+
+--- Time 228 ---
+P11 executing CPU, remaining: 12, quantum: 3
+P10 IO remaining: 6
+Ready: []
+Waiting: [P2]
+IO: [P10]
+Running: P11
+
+--- Time 229 ---
+P11 executing CPU, remaining: 11, quantum: 4
+P10 IO remaining: 5
+Ready: []
+Waiting: [P2]
+IO: [P10]
+Running: P11
+
+--- Time 230 ---
+P11 executing CPU, remaining: 10, quantum: 5
+P10 IO remaining: 4
+Ready: []
+Waiting: [P2]
+IO: [P10]
+Running: P11
+
+--- Time 231 ---
+P11 executing CPU, remaining: 9, quantum: 1
+P10 IO remaining: 3
+Ready: []
+Waiting: [P2]
+IO: [P10]
+Running: P11
+
+--- Time 232 ---
+P11 executing CPU, remaining: 8, quantum: 2
+P10 IO remaining: 2
+Ready: []
+Waiting: [P2]
+IO: [P10]
+Running: P11
+
+--- Time 233 ---
+P11 executing CPU, remaining: 7, quantum: 3
+P10 IO remaining: 1
+Ready: []
+Waiting: [P2]
+IO: [P10]
+Running: P11
+
+--- Time 234 ---
+P11 executing CPU, remaining: 6, quantum: 4
+P10 IO remaining: 0
+Ready: []
+Waiting: [P2]
+IO: [P10]
+Running: P11
+
+--- Time 235 ---
+P10 completed IO, moved to ready queue
+P11 executing CPU, remaining: 5, quantum: 5
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 236 ---
+Quantum expired for P11
+[P10(pri=10, actions=[F[2,1], F[1,1]])]
+[P10(pri=10, actions=[F[2,1], F[1,1]])]
+P11 executing CPU, remaining: 4, quantum: 1
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 237 ---
+P11 executing CPU, remaining: 3, quantum: 2
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 238 ---
+P11 executing CPU, remaining: 2, quantum: 3
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 239 ---
+P11 executing CPU, remaining: 1, quantum: 4
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 240 ---
+P11 executing CPU, remaining: 0, quantum: 5
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 241 ---
+Quantum expired for P11
+[P10(pri=10, actions=[F[2,1], F[1,1]])]
+[P10(pri=10, actions=[F[2,1], F[1,1]])]
+P11 acquired 3 of R3
+P11 executing CPU, remaining: 25, quantum: 1
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 242 ---
+P11 executing CPU, remaining: 24, quantum: 2
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 243 ---
+P11 executing CPU, remaining: 23, quantum: 3
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 244 ---
+P11 executing CPU, remaining: 22, quantum: 4
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 245 ---
+P10 aged, new priority: 9
+P11 executing CPU, remaining: 21, quantum: 5
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 246 ---
+Quantum expired for P11
+[P10(pri=9, actions=[F[2,1], F[1,1]])]
+[P10(pri=9, actions=[F[2,1], F[1,1]])]
+P11 executing CPU, remaining: 20, quantum: 1
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 247 ---
+P11 executing CPU, remaining: 19, quantum: 2
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 248 ---
+P11 executing CPU, remaining: 18, quantum: 3
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 249 ---
+P11 executing CPU, remaining: 17, quantum: 4
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 250 ---
+P11 executing CPU, remaining: 16, quantum: 5
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 251 ---
+Quantum expired for P11
+[P10(pri=9, actions=[F[2,1], F[1,1]])]
+[P10(pri=9, actions=[F[2,1], F[1,1]])]
+P11 executing CPU, remaining: 15, quantum: 1
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 252 ---
+P11 executing CPU, remaining: 14, quantum: 2
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 253 ---
+P11 executing CPU, remaining: 13, quantum: 3
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 254 ---
+P11 executing CPU, remaining: 12, quantum: 4
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 255 ---
+P10 aged, new priority: 8
+P11 executing CPU, remaining: 11, quantum: 5
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 256 ---
+Quantum expired for P11
+[P10(pri=8, actions=[F[2,1], F[1,1]])]
+[P10(pri=8, actions=[F[2,1], F[1,1]])]
+P11 executing CPU, remaining: 10, quantum: 1
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 257 ---
+P11 executing CPU, remaining: 9, quantum: 2
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 258 ---
+P11 executing CPU, remaining: 8, quantum: 3
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 259 ---
+P11 executing CPU, remaining: 7, quantum: 4
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 260 ---
+P11 executing CPU, remaining: 6, quantum: 5
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 261 ---
+Quantum expired for P11
+[P10(pri=8, actions=[F[2,1], F[1,1]])]
+[P10(pri=8, actions=[F[2,1], F[1,1]])]
+P11 executing CPU, remaining: 5, quantum: 1
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 262 ---
+P11 executing CPU, remaining: 4, quantum: 2
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 263 ---
+P11 executing CPU, remaining: 3, quantum: 3
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 264 ---
+P11 executing CPU, remaining: 2, quantum: 4
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 265 ---
+P10 aged, new priority: 7
+P11 executing CPU, remaining: 1, quantum: 5
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: P11
+
+--- Time 266 ---
+Quantum expired for P11
+[P10(pri=7, actions=[F[2,1], F[1,1]])]
+[P10(pri=7, actions=[F[2,1], F[1,1]])]
+P11 executing CPU, remaining: 0, quantum: 1
+Ready: [P10]
+Waiting: [P2]
+IO: []
+Running: none
+
+--- Time 267 ---
+P11 moved to IO queue
+Scheduled P10
+P10 released 1 of R2
+P10 released 1 of R1
+  Released 0 of R1
+  Released 0 of R2
+P10 terminated
+
+--- Time 267 ---
+P2 woke up - resource available
+Scheduled P2
+P2 acquired 1 of R1
+P2 executing CPU, remaining: 49, quantum: 1
+P11 IO remaining: 13
+Ready: []
+Waiting: []
+IO: [P11]
+Running: P2
+
+--- Time 268 ---
+P2 executing CPU, remaining: 48, quantum: 2
+P11 IO remaining: 12
+Ready: []
+Waiting: []
+IO: [P11]
+Running: P2
+
+--- Time 269 ---
+P2 executing CPU, remaining: 47, quantum: 3
+P11 IO remaining: 11
+Ready: []
+Waiting: []
+IO: [P11]
+Running: P2
+
+--- Time 270 ---
+P2 executing CPU, remaining: 46, quantum: 4
+P11 IO remaining: 10
+Ready: []
+Waiting: []
+IO: [P11]
+Running: P2
+
+--- Time 271 ---
+P2 executing CPU, remaining: 45, quantum: 5
+P11 IO remaining: 9
+Ready: []
+Waiting: []
+IO: [P11]
+Running: P2
+
+--- Time 272 ---
+P2 executing CPU, remaining: 44, quantum: 1
+P11 IO remaining: 8
+Ready: []
+Waiting: []
+IO: [P11]
+Running: P2
+
+--- Time 273 ---
+P2 executing CPU, remaining: 43, quantum: 2
+P11 IO remaining: 7
+Ready: []
+Waiting: []
+IO: [P11]
+Running: P2
+
+--- Time 274 ---
+P2 executing CPU, remaining: 42, quantum: 3
+P11 IO remaining: 6
+Ready: []
+Waiting: []
+IO: [P11]
+Running: P2
+
+--- Time 275 ---
+P2 executing CPU, remaining: 41, quantum: 4
+P11 IO remaining: 5
+Ready: []
+Waiting: []
+IO: [P11]
+Running: P2
+
+--- Time 276 ---
+P2 executing CPU, remaining: 40, quantum: 5
+P11 IO remaining: 4
+Ready: []
+Waiting: []
+IO: [P11]
+Running: P2
+
+--- Time 277 ---
+P2 executing CPU, remaining: 39, quantum: 1
+P11 IO remaining: 3
+Ready: []
+Waiting: []
+IO: [P11]
+Running: P2
+
+--- Time 278 ---
+P2 executing CPU, remaining: 38, quantum: 2
+P11 IO remaining: 2
+Ready: []
+Waiting: []
+IO: [P11]
+Running: P2
+
+--- Time 279 ---
+P2 executing CPU, remaining: 37, quantum: 3
+P11 IO remaining: 1
+Ready: []
+Waiting: []
+IO: [P11]
+Running: P2
+
+--- Time 280 ---
+P2 executing CPU, remaining: 36, quantum: 4
+P11 IO remaining: 0
+Ready: []
+Waiting: []
+IO: [P11]
+Running: P2
+
+--- Time 281 ---
+P11 completed IO, moved to ready queue
+P2 executing CPU, remaining: 35, quantum: 5
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 282 ---
+Quantum expired for P2
+[P11(pri=20, actions=[30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=20, actions=[30{CPU}, F[3,2], F[3,2]])]
+P2 executing CPU, remaining: 34, quantum: 1
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 283 ---
+P2 executing CPU, remaining: 33, quantum: 2
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 284 ---
+P2 executing CPU, remaining: 32, quantum: 3
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 285 ---
+P2 executing CPU, remaining: 31, quantum: 4
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 286 ---
+P2 executing CPU, remaining: 30, quantum: 5
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 287 ---
+Quantum expired for P2
+[P11(pri=20, actions=[30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=20, actions=[30{CPU}, F[3,2], F[3,2]])]
+P2 executing CPU, remaining: 29, quantum: 1
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 288 ---
+P2 executing CPU, remaining: 28, quantum: 2
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 289 ---
+P2 executing CPU, remaining: 27, quantum: 3
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 290 ---
+P2 executing CPU, remaining: 26, quantum: 4
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 291 ---
+P11 aged, new priority: 19
+P2 executing CPU, remaining: 25, quantum: 5
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 292 ---
+Quantum expired for P2
+[P11(pri=19, actions=[30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=19, actions=[30{CPU}, F[3,2], F[3,2]])]
+P2 executing CPU, remaining: 24, quantum: 1
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 293 ---
+P2 executing CPU, remaining: 23, quantum: 2
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 294 ---
+P2 executing CPU, remaining: 22, quantum: 3
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 295 ---
+P2 executing CPU, remaining: 21, quantum: 4
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 296 ---
+P2 executing CPU, remaining: 20, quantum: 5
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 297 ---
+Quantum expired for P2
+[P11(pri=19, actions=[30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=19, actions=[30{CPU}, F[3,2], F[3,2]])]
+P2 executing CPU, remaining: 19, quantum: 1
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 298 ---
+P2 executing CPU, remaining: 18, quantum: 2
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 299 ---
+P2 executing CPU, remaining: 17, quantum: 3
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 300 ---
+P2 executing CPU, remaining: 16, quantum: 4
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 301 ---
+P11 aged, new priority: 18
+P2 executing CPU, remaining: 15, quantum: 5
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 302 ---
+Quantum expired for P2
+[P11(pri=18, actions=[30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=18, actions=[30{CPU}, F[3,2], F[3,2]])]
+P2 executing CPU, remaining: 14, quantum: 1
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 303 ---
+P2 executing CPU, remaining: 13, quantum: 2
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 304 ---
+P2 executing CPU, remaining: 12, quantum: 3
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 305 ---
+P2 executing CPU, remaining: 11, quantum: 4
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 306 ---
+P2 executing CPU, remaining: 10, quantum: 5
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 307 ---
+Quantum expired for P2
+[P11(pri=18, actions=[30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=18, actions=[30{CPU}, F[3,2], F[3,2]])]
+P2 executing CPU, remaining: 9, quantum: 1
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 308 ---
+P2 executing CPU, remaining: 8, quantum: 2
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 309 ---
+P2 executing CPU, remaining: 7, quantum: 3
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 310 ---
+P2 executing CPU, remaining: 6, quantum: 4
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 311 ---
+P11 aged, new priority: 17
+P2 executing CPU, remaining: 5, quantum: 5
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 312 ---
+Quantum expired for P2
+[P11(pri=17, actions=[30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=17, actions=[30{CPU}, F[3,2], F[3,2]])]
+P2 executing CPU, remaining: 4, quantum: 1
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 313 ---
+P2 executing CPU, remaining: 3, quantum: 2
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 314 ---
+P2 executing CPU, remaining: 2, quantum: 3
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 315 ---
+P2 executing CPU, remaining: 1, quantum: 4
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 316 ---
+P2 executing CPU, remaining: 0, quantum: 5
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 317 ---
+Quantum expired for P2
+[P11(pri=17, actions=[30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=17, actions=[30{CPU}, F[3,2], F[3,2]])]
+P2 acquired 1 of R2
+P2 executing CPU, remaining: 21, quantum: 1
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 318 ---
+P2 executing CPU, remaining: 20, quantum: 2
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 319 ---
+P2 executing CPU, remaining: 19, quantum: 3
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 320 ---
+P2 executing CPU, remaining: 18, quantum: 4
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 321 ---
+P11 aged, new priority: 16
+P2 executing CPU, remaining: 17, quantum: 5
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 322 ---
+Quantum expired for P2
+[P11(pri=16, actions=[30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=16, actions=[30{CPU}, F[3,2], F[3,2]])]
+P2 executing CPU, remaining: 16, quantum: 1
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 323 ---
+P2 executing CPU, remaining: 15, quantum: 2
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 324 ---
+P2 executing CPU, remaining: 14, quantum: 3
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 325 ---
+P2 executing CPU, remaining: 13, quantum: 4
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 326 ---
+P2 executing CPU, remaining: 12, quantum: 5
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 327 ---
+Quantum expired for P2
+[P11(pri=16, actions=[30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=16, actions=[30{CPU}, F[3,2], F[3,2]])]
+P2 executing CPU, remaining: 11, quantum: 1
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 328 ---
+P2 executing CPU, remaining: 10, quantum: 2
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 329 ---
+P2 executing CPU, remaining: 9, quantum: 3
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 330 ---
+P2 executing CPU, remaining: 8, quantum: 4
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 331 ---
+P11 aged, new priority: 15
+P2 executing CPU, remaining: 7, quantum: 5
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 332 ---
+Quantum expired for P2
+[P11(pri=15, actions=[30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=15, actions=[30{CPU}, F[3,2], F[3,2]])]
+P2 executing CPU, remaining: 6, quantum: 1
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 333 ---
+P2 executing CPU, remaining: 5, quantum: 2
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 334 ---
+P2 executing CPU, remaining: 4, quantum: 3
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 335 ---
+P2 executing CPU, remaining: 3, quantum: 4
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 336 ---
+P2 executing CPU, remaining: 2, quantum: 5
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 337 ---
+Quantum expired for P2
+[P11(pri=15, actions=[30{CPU}, F[3,2], F[3,2]])]
+[P11(pri=15, actions=[30{CPU}, F[3,2], F[3,2]])]
+P2 executing CPU, remaining: 1, quantum: 1
+Ready: [P11]
+Waiting: []
+IO: []
+Running: P2
+
+--- Time 338 ---
+P2 executing CPU, remaining: 0, quantum: 2
+Ready: [P11]
+Waiting: []
+IO: []
+Running: none
+
+--- Time 339 ---
+P2 moved to IO queue
+Scheduled P11
+P11 executing CPU, remaining: 29, quantum: 1
+P2 IO remaining: 6
+Ready: []
+Waiting: []
+IO: [P2]
+Running: P11
+
+--- Time 340 ---
+P11 executing CPU, remaining: 28, quantum: 2
+P2 IO remaining: 5
+Ready: []
+Waiting: []
+IO: [P2]
+Running: P11
+
+--- Time 341 ---
+P11 executing CPU, remaining: 27, quantum: 3
+P2 IO remaining: 4
+Ready: []
+Waiting: []
+IO: [P2]
+Running: P11
+
+--- Time 342 ---
+P11 executing CPU, remaining: 26, quantum: 4
+P2 IO remaining: 3
+Ready: []
+Waiting: []
+IO: [P2]
+Running: P11
+
+--- Time 343 ---
+P11 executing CPU, remaining: 25, quantum: 5
+P2 IO remaining: 2
+Ready: []
+Waiting: []
+IO: [P2]
+Running: P11
+
+--- Time 344 ---
+P11 executing CPU, remaining: 24, quantum: 1
+P2 IO remaining: 1
+Ready: []
+Waiting: []
+IO: [P2]
+Running: P11
+
+--- Time 345 ---
+P11 executing CPU, remaining: 23, quantum: 2
+P2 IO remaining: 0
+Ready: []
+Waiting: []
+IO: [P2]
+Running: P11
+
+--- Time 346 ---
+P2 completed IO, moved to ready queue
+Preempting P11 for higher priority P2
+P2 released 1 of R2
+P2 released 1 of R1
+  Released 0 of R1
+  Released 0 of R2
+P2 terminated
+
+--- Time 346 ---
+Scheduled P11
+P11 executing CPU, remaining: 22, quantum: 3
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 347 ---
+P11 executing CPU, remaining: 21, quantum: 4
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 348 ---
+P11 executing CPU, remaining: 20, quantum: 5
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 349 ---
+P11 executing CPU, remaining: 19, quantum: 1
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 350 ---
+P11 executing CPU, remaining: 18, quantum: 2
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 351 ---
+P11 executing CPU, remaining: 17, quantum: 3
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 352 ---
+P11 executing CPU, remaining: 16, quantum: 4
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 353 ---
+P11 executing CPU, remaining: 15, quantum: 5
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 354 ---
+P11 executing CPU, remaining: 14, quantum: 1
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 355 ---
+P11 executing CPU, remaining: 13, quantum: 2
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 356 ---
+P11 executing CPU, remaining: 12, quantum: 3
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 357 ---
+P11 executing CPU, remaining: 11, quantum: 4
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 358 ---
+P11 executing CPU, remaining: 10, quantum: 5
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 359 ---
+P11 executing CPU, remaining: 9, quantum: 1
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 360 ---
+P11 executing CPU, remaining: 8, quantum: 2
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 361 ---
+P11 executing CPU, remaining: 7, quantum: 3
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 362 ---
+P11 executing CPU, remaining: 6, quantum: 4
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 363 ---
+P11 executing CPU, remaining: 5, quantum: 5
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 364 ---
+P11 executing CPU, remaining: 4, quantum: 1
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 365 ---
+P11 executing CPU, remaining: 3, quantum: 2
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 366 ---
+P11 executing CPU, remaining: 2, quantum: 3
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 367 ---
+P11 executing CPU, remaining: 1, quantum: 4
+Ready: []
+Waiting: []
+IO: []
+Running: P11
+
+--- Time 368 ---
+P11 executing CPU, remaining: 0, quantum: 5
+P11 released 2 of R3
+P11 released 2 of R3
+  Released 0 of R3
+P11 terminated
+Ready: []
+Waiting: []
+IO: []
+Running: none
+
+========================================
+         SIMULATION RESULTS
+========================================
+
+Gantt Chart:
+┌────────────────────┐┌──────────────────────────────┐┌───────────────────────────┐┌──────────────────────────────────┐┌────────────────┐┌──────────────────────────────────────────────┐┌──────────────────────────────────────────────────────────────────────────┐┌───────────────┐┌────────────────┐┌────────────────┐┌────────────────┐┌────────────────┐┌────────────────┐┌────────────────┐┌────────────┐┌─────────────────────────────────────────────────────────┐┌──────────────────────────────────────────────────────────────────────────────────┐┌─────────────────────────────────────────┐
+│0        P0       12││13            P11           33││34           P0          52││53               P1             78││79     P10    85││86                    P1                   122││123                                 P10                                185││186    P11  189││190    P10   194││195    P11   199││200    P10   204││205    P11   209││210    P10   214││215    P11   219││220  P10 220││221                         P11                       266││267                                      P2                                    338││339                 P11               368│
+└────────────────────┘└──────────────────────────────┘└───────────────────────────┘└──────────────────────────────────┘└────────────────┘└──────────────────────────────────────────────┘└──────────────────────────────────────────────────────────────────────────┘└───────────────┘└────────────────┘└────────────────┘└────────────────┘└────────────────┘└────────────────┘└────────────────┘└────────────┘└─────────────────────────────────────────────────────────┘└──────────────────────────────────────────────────────────────────────────────────┘└─────────────────────────────────────────┘
+
++========================== Final Results ==============================+
+|P0   | Arrival: 0     | Finish: 53    | Wait: 0     | Turnaround: 53   |
+|P1   | Arrival: 8     | Finish: 123   | Wait: 45    | Turnaround: 115  |
+|P10  | Arrival: 4     | Finish: 267   | Wait: 163   | Turnaround: 263  |
+|P2   | Arrival: 5     | Finish: 346   | Wait: 262   | Turnaround: 341  |
+|P11  | Arrival: 4     | Finish: 369   | Wait: 235   | Turnaround: 365  |
++=======================================================================+
+
+
+Avg Waiting Time: ١٤١٫٠٠
+Avg Turnaround Time: ٢٢٧٫٤٠
+
+--- Deadlock Report ---
+No deadlocks detected during simulation.
+
+Total simulation time: 369 units
+
+Process finished with exit code 0
